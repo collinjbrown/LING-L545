@@ -31,7 +31,7 @@ for c in input:
     # This syntax pains my soul deeply.
     if (c not in punctuation): continue
 
-    # Why 2, you might ask. Well, it is because
+    # Why r, you might ask. Well, it is because
     # we don't want to cause out-of-range errors
     # when we test to see if this really is
     # the end of a sentence later.
