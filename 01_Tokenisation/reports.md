@@ -31,3 +31,28 @@
  example, "the 16th century" is rendered "XVI.go" which
  would have confused our segmenter had it not been accounted
  for.
+
+## The MatchMax Tokenizer
+ You can find my implementation of the MaxMatch algorithm in
+ C++ here: https://github.com/collinjbrown/UD_Japanese_Maxmatch.
+ You can follow the instructions and build it yourself or
+ just use one of the releases (which should include both
+ Windows and Linux).
+ My implementation is computationally fairly performant with
+ the main drag being the process of scraping the datasets for
+ the necessary data. The algorithm achieves a decent degree of
+ accuracy, with a WER of 12.5% over the 542 sentences in the
+ test data. As in the English examples we looked at in class,
+ the mistakes it makes very often begin with small words and
+ compound across the rest of the sentence. For example, "は い-",
+ the topic particle followed by a word beginning in "い" is
+ interpreted as "はい", as can be seen in "は い ない" which is
+ interpreted as "はい ない" or "は いちばん" which becomes
+ "はい ば ん". This latter example is one which would be remedied
+ by having another system checking to ensure that each word
+ obeys Japanese phonotactics, as "ん" is not allowed to sit on
+ its own (though obviously there are informal exceptions to this,
+ such as in "んまい" that would have to be accounted for). That
+ such a naive implementation would perform relatively well is to
+ some degree surprising, and I'm curious to see how a similar
+ system would work for Tibetan.
