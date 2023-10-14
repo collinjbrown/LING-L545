@@ -1,0 +1,62 @@
+Multichar_Symbols
+
+%<n%>					! Noun
+%<pl%>					! Plurality
+%<gen%>					! Genitive
+%<erg%>					! Ergative
+%<abl%>					! Ablative
+%<obl%>					! Oblique
+%<ass%>					! Associative
+
+%{gi%}
+%{gis%}
+%{tu%}
+
+LEXICON Root
+
+Nouns ;
+
+LEXICON N-I
+
+%<n%>: CASE ;
+
+LEXICON N-II
+
+%<n%>: PLURALITY ;
+
+LEXICON PLURALITY
+
+%<sg%>: CASE ;
+%<pl%>:%>tso CASE ;
+
+LEXICON CASE
+
+%<abs%>: # ;			! Absolutive
+%<gen%>:%>%{gi%} # ;	! Genitive
+%<erg%>:%>%{gis%} # ;	! Ergative
+%<abl%>:%>nas #;		! Ablative
+%<obl%>:%>%{tu%} #;		! Oblique
+%<ass%>:%>dang #;		! Associative
+
+LEXICON Nouns
+
+bod:bod N-I ;				! "Tibet"			1
+bodpa:bodpa N-II ;			! "Tibetan"			2
+tshakspar:tshakspar N-I ;	! "Newspaper"		3
+ama:ama N-II ;				! "Mother"			4
+rmomo:rmomo N-II ;			! "Grandmother"		5
+ace:ace N-II ;				! "Elder Sister"	6
+slopma:slopma N-II ;		! "Student"			7
+parchas:parchas N-I ;		! "Camera"			8
+rimo:rimo N-I ;				! "Drawing"			9
+spuku:spuku N-II ;			! "Child"			10
+rta:rta N-I ;				! "Horse"			11
+byargod:byargod N-I ;		! "Vulture"			12
+ri:ri N-I ;					! "Mountain"		13
+phayul:phayul N-I ;			! "Country"			14
+smyuku:smyuku N-I ;			! "Bamboo"			15
+thep:thep N-I ;				! "Book"			16
+mi:mi N-II ;				! "Person"			17
+hdzamkling:hdzamkling N-I ;	! "World"			18
+sloptshan:sloptshan N-I ;	! "Lesson"			19
+groksmo:groksmo N-II ;		! "Friend, Fem."	20

@@ -1,0 +1,55 @@
+Alphabet
+
+I E U O A M N P T C K B D G S Z Y W R L
+i e u o a m n p t c k b d g s z y w r l
+
+%{gi%}:i
+%{gi%}:gi
+%{gi%}:kyi
+%{gi%}:gyi
+
+%{gis%}:s
+%{gis%}:gis
+%{gis%}:kyis
+%{gis%}:gyis
+
+%{tu%}:r
+%{tu%}:su
+%{tu%}:tu
+%{tu%}:du
+
+;
+
+Sets
+
+Vowel = i e u o a I E U O A ;
+Vel = G g ;
+DBS = D d B b S s ;
+Son = N n M m R r L l ;
+Ese = S s ;
+
+Rules
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+"Realize genitive 1"
+%{gi%}:i <=> Vowel: %>: _ ;
+"Realize genitive 2"
+%{gi%}:kyi <=> DBS: %>: _ ;
+"Realize genitive 3"
+%{gi%}:gyi <=> Son: %>: _ ;
+
+"Realize ergative 1"
+%{gis%}:s <=> Vowel: %>: _ ;
+"Realize ergative 2"
+%{gis%}:kyis <=> DBS: %>: _ ;
+"Realize ergative 3"
+%{gis%}:gyis <=> Son: %>: _ ;
+
+"Realize oblique 1"
+%{tu%}:r <=> Vowel: %>: _ ;
+"Realize oblique 2"
+%{tu%}:su <=> Ese: %>: _ ;
+"Realize oblique 3"
+%{tu%}:du <=> Son: %>: _ ;
