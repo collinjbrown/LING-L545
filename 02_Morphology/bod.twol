@@ -3,20 +3,23 @@ Alphabet
 I E U O A M N P T C K B D G S Z Y W R L
 i e u o a m n p t c k b d g s z y w r l
 
-%{gi%}:i
-%{gi%}:gi
-%{gi%}:kyi
-%{gi%}:gyi
+%{g%}:0
+%{g%}:k
+%{g%}:g
 
-%{gis%}:s
-%{gis%}:gis
-%{gis%}:kyis
-%{gis%}:gyis
+%{y%}:0
+%{y%}:y
 
-%{tu%}:r
-%{tu%}:su
-%{tu%}:tu
-%{tu%}:du
+%{i%}:0
+%{i%}:i
+
+%{T%}:t
+%{T%}:d
+%{T%}:s
+%{T%}:r
+
+%{u%}:0
+%{u%}:u
 
 ;
 
@@ -24,32 +27,34 @@ Sets
 
 Vowel = i e u o a I E U O A ;
 Vel = G g ;
+DBSNMRL = D d B b S s N n M m R r L l ;
 DBS = D d B b S s ;
 Son = N n M m R r L l ;
 Ese = S s ;
+Ere = R r ;
 
 Rules
 
 "Remove morpheme boundary"
 %>:0 <=> _ ;
 
-"Realize genitive 1"
-%{gi%}:i <=> Vowel: %>: _ ;
-"Realize genitive 2"
-%{gi%}:kyi <=> DBS: %>: _ ;
-"Realize genitive 3"
-%{gi%}:gyi <=> Son: %>: _ ;
+"Realize genitive / ergative g 1"
+%{g%}:0 <=> Vowel: %>: _ ;
+"Realize genitive / ergative g 2"
+%{g%}:k <=> DBS: %>: _ ;
 
-"Realize ergative 1"
-%{gis%}:s <=> Vowel: %>: _ ;
-"Realize ergative 2"
-%{gis%}:kyis <=> DBS: %>: _ ;
-"Realize ergative 3"
-%{gis%}:gyis <=> Son: %>: _ ;
+"Realize genitive / ergative y 1"
+%{y%}:y <=> DBSNMRL: %>: %{g%}: _ ;
 
-"Realize oblique 1"
-%{tu%}:r <=> Vowel: %>: _ ;
-"Realize oblique 2"
-%{tu%}:su <=> Ese: %>: _ ;
-"Realize oblique 3"
-%{tu%}:du <=> Son: %>: _ ;
+"Realize ergative i 1"
+%{i%}:0 <=> Vowel: %>: %{g%}: %{y%}: _ ;
+
+"Realize oblique t 1"
+%{T%}:r <=> Vowel: %>: _ ;
+"Realize oblique t 2"
+%{T%}:s <=> Ese: %>: _ ;
+"Realize oblique t 3"
+%{T%}:d <=> Son: %>: _ ;
+
+"Realize oblique u 1"
+%{u%}:0 <=> Vowel: %>: %{T%}: _ ;

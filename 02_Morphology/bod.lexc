@@ -8,9 +8,11 @@ Multichar_Symbols
 %<obl%>					! Oblique
 %<ass%>					! Associative
 
-%{gi%}
-%{gis%}
-%{tu%}
+%{g%}
+%{y%}
+%{i%}
+%{T%}
+%{u%}
 
 LEXICON Root
 
@@ -31,12 +33,12 @@ LEXICON PLURALITY
 
 LEXICON CASE
 
-%<abs%>: # ;			! Absolutive
-%<gen%>:%>%{gi%} # ;	! Genitive
-%<erg%>:%>%{gis%} # ;	! Ergative
-%<abl%>:%>nas #;		! Ablative
-%<obl%>:%>%{tu%} #;		! Oblique
-%<ass%>:%>dang #;		! Associative
+%<abs%>: # ;					! Absolutive
+%<gen%>:%>%{g%}%{y%}i # ;		! Genitive
+%<erg%>:%>%{g%}%{y%}{i%}s # ;	! Ergative
+%<abl%>:%>nas #;				! Ablative
+%<obl%>:%>%{T%}%{u%} #;			! Oblique
+%<ass%>:%>dang #;				! Associative
 
 LEXICON Nouns
 
